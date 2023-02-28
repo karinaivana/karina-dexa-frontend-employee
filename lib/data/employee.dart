@@ -11,7 +11,8 @@ class Employee {
   final String name;
   final String email;
   final String password;
-  final String role;
+  @JsonKey(name: "roleDTO")
+  final Role role;
   final String phoneNumber;
   final String? photoLink;
 
@@ -22,6 +23,22 @@ class Employee {
       _$EmployeeFromJson(json);
 
   Map<String, dynamic> toJson() => _$EmployeeToJson(this);
+}
+
+@JsonSerializable()
+class Role {
+  final String id;
+  final DateTime createdAt;
+  final DateTime? updatedAt;
+  final DateTime? deletedAt;
+  final String description;
+
+  Role(this.id, this.createdAt, this.updatedAt, this.deletedAt,
+      this.description);
+
+  factory Role.fromJson(Map<String, dynamic> json) => _$RoleFromJson(json);
+
+  Map<String, dynamic> toJson() => _$RoleToJson(this);
 }
 
 @JsonSerializable()

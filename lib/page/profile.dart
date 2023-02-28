@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:employee_app/components/navbar.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +16,6 @@ class Profile extends StatefulWidget {
 
 class _ProfileState extends State<Profile> {
   final SharedPrefForObject sharedPref = SharedPrefForObject();
-  final storageRef = FirebaseStorage.instance.ref();
 
   bool _isloading = true;
   Employee? _employee;
@@ -83,7 +81,7 @@ class _ProfileState extends State<Profile> {
         style: const TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
       ),
       const Padding(padding: EdgeInsets.only(bottom: 10)),
-      infoDetail(Icons.work, _employee!.role),
+      infoDetail(Icons.work, _employee!.role.description),
       infoDetail(Icons.email, _employee!.email),
       infoDetail(Icons.phone, _employee!.phoneNumber),
     ]);
@@ -116,7 +114,7 @@ class _ProfileState extends State<Profile> {
   Widget editProfileButton() {
     return Container(
         width: double.infinity,
-        padding: EdgeInsets.only(top: 20, right: 20, left: 20),
+        padding: const EdgeInsets.only(top: 20, right: 20, left: 20),
         child: ElevatedButton(
             style: ButtonStyle(
               backgroundColor:
@@ -140,28 +138,6 @@ class _ProfileState extends State<Profile> {
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
             )));
   }
-
-  /*Widget terbaru() {
-    return Center(
-      child: FutureBuilder(
-        future: FirebaseStorage.instance
-            .ref()
-            .child("/IMG_9992.jpeg")
-            .getDownloadURL(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.done) {
-            if (snapshot.hasError) {
-              return const Text('Error loading image');
-            } else {
-              return Image.network(snapshot.data ?? '');
-            }
-          } else {
-            return const CircularProgressIndicator();
-          }
-        },
-      ),
-    );
-  }*/
 
   @override
   Widget build(BuildContext context) {

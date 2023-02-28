@@ -72,7 +72,8 @@ class LoginPageBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SingleChildScrollView(
+        child: Container(
       margin: const EdgeInsets.only(top: 10, right: 20, left: 20, bottom: 10),
       child: Column(children: [
         Container(
@@ -84,7 +85,7 @@ class LoginPageBody extends StatelessWidget {
         ),
         const LoginForm()
       ]),
-    );
+    ));
   }
 }
 
