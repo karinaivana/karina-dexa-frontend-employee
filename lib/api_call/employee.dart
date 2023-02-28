@@ -8,8 +8,7 @@ class EmployeeApi {
 
   final _baseUrl = '$EMPLOYEE';
 
-  Future<LoginResponse?> loginToAppTest(
-      {required LoginRequest loginRequest}) async {
+  Future<LoginResponse?> login({required LoginRequest loginRequest}) async {
     LoginResponse? result;
     try {
       Response response = await _dio.post(
@@ -18,7 +17,7 @@ class EmployeeApi {
       );
       result = LoginResponse.fromJson(response.data);
     } catch (e) {
-      print('Error creating user: $e');
+      print('Error login to employee side: $e');
     }
     return result;
   }
@@ -34,7 +33,7 @@ class EmployeeApi {
       );
       result = UpdateEmployeePersonalDataResponse.fromJson(response.data);
     } catch (e) {
-      print('Error creating user: $e');
+      print('Error update employee data: $e');
     }
     return result;
   }

@@ -1,12 +1,13 @@
+
 import 'package:flutter/material.dart';
 
 import '../../data/attendance_list.dart';
 import '../../utils/date.dart';
 
-class EmployeeAttendanceListTable extends StatelessWidget {
+class TableAttendanceEmployee extends StatelessWidget {
   final List<AttendanceList>? emplooyeeAttandanceList;
 
-  const EmployeeAttendanceListTable(
+  const TableAttendanceEmployee(
       {super.key, required this.emplooyeeAttandanceList});
 
   List<DataColumn> _createColumns() {

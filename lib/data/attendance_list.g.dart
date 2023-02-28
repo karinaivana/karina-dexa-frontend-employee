@@ -36,20 +36,6 @@ Map<String, dynamic> _$AttendanceListToJson(AttendanceList instance) =>
       'endWorkAt': instance.endWorkAt?.toIso8601String(),
     };
 
-GetEmployeeAttendanceListResponseData
-    _$GetEmployeeAttendanceListResponseDataFromJson(
-            Map<String, dynamic> json) =>
-        GetEmployeeAttendanceListResponseData(
-          GetEmployeeAttendanceListResponse.fromJson(
-              json['data'] as Map<String, dynamic>),
-        );
-
-Map<String, dynamic> _$GetEmployeeAttendanceListResponseDataToJson(
-        GetEmployeeAttendanceListResponseData instance) =>
-    <String, dynamic>{
-      'data': instance.data,
-    };
-
 GetEmployeeAttendanceListResponse _$GetEmployeeAttendanceListResponseFromJson(
         Map<String, dynamic> json) =>
     GetEmployeeAttendanceListResponse(

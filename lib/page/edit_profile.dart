@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:employee_app/components/login/edit_employee_data_form.dart';
+import 'package:employee_app/components/profile/edit_employee_data_form.dart';
 import 'package:flutter/material.dart';
 
 import '../data/employee.dart';

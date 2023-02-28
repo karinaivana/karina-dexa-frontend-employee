@@ -25,18 +25,6 @@ class Employee {
 }
 
 @JsonSerializable()
-class LoginResponseData {
-  final LoginResponse data;
-
-  LoginResponseData(this.data);
-
-  factory LoginResponseData.fromJson(Map<String, dynamic> json) =>
-      _$LoginResponseDataFromJson(json);
-
-  Map<String, dynamic> toJson() => _$LoginResponseDataToJson(this);
-}
-
-@JsonSerializable()
 class LoginResponse {
   final bool success;
   final String message;

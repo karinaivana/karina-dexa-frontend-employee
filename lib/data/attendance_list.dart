@@ -22,20 +22,6 @@ class AttendanceList {
 }
 
 @JsonSerializable()
-class GetEmployeeAttendanceListResponseData {
-  final GetEmployeeAttendanceListResponse data;
-
-  GetEmployeeAttendanceListResponseData(this.data);
-
-  factory GetEmployeeAttendanceListResponseData.fromJson(
-          Map<String, dynamic> json) =>
-      _$GetEmployeeAttendanceListResponseDataFromJson(json);
-
-  Map<String, dynamic> toJson() =>
-      _$GetEmployeeAttendanceListResponseDataToJson(this);
-}
-
-@JsonSerializable()
 class GetEmployeeAttendanceListResponse {
   final bool success;
   final String message;

@@ -115,7 +115,7 @@ class _LoginFormState extends State<LoginForm> {
     LoginRequest request =
         LoginRequest(emailController.text, passwordController.text);
 
-    var response = await employeeApi.loginToAppTest(loginRequest: request);
+    var response = await employeeApi.login(loginRequest: request);
 
     if (response != null && response.employee != null) {
       sharedPref.save('employee_data', jsonEncode(response.employee));
@@ -223,7 +223,7 @@ class _LoginFormState extends State<LoginForm> {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(bottom: 15),
+              margin: const EdgeInsets.only(bottom: 15),
               child: Row(children: [
                 Checkbox(
                     value: _showPassword,
@@ -232,7 +232,7 @@ class _LoginFormState extends State<LoginForm> {
                         _showPassword = !_showPassword;
                       });
                     }),
-                AutoSizeText("Lihat Kata Sandi", maxLines: 1)
+                const AutoSizeText("Lihat Kata Sandi", maxLines: 1)
               ]),
             ),
             loginButton()

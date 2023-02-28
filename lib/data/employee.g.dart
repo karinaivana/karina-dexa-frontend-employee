@@ -36,16 +36,6 @@ Map<String, dynamic> _$EmployeeToJson(Employee instance) => <String, dynamic>{
       'photoLink': instance.photoLink,
     };
 
-LoginResponseData _$LoginResponseDataFromJson(Map<String, dynamic> json) =>
-    LoginResponseData(
-      LoginResponse.fromJson(json['data'] as Map<String, dynamic>),
-    );
-
-Map<String, dynamic> _$LoginResponseDataToJson(LoginResponseData instance) =>
-    <String, dynamic>{
-      'data': instance.data,
-    };
-
 LoginResponse _$LoginResponseFromJson(Map<String, dynamic> json) =>
     LoginResponse(
       json['success'] as bool,
@@ -74,7 +64,7 @@ Map<String, dynamic> _$LoginRequestToJson(LoginRequest instance) =>
 UpdateEmployeePersonalDataRequest _$UpdateEmployeePersonalDataRequestFromJson(
         Map<String, dynamic> json) =>
     UpdateEmployeePersonalDataRequest(
-      json['employeeId'] as int,
+      json['employeeId'] as int?,
       json['photoLink'] as String,
       json['phoneNumber'] as String,
       json['password'] as String,

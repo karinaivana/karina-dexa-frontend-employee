@@ -67,7 +67,7 @@ class AttendanceApi {
         result = AddEmployeeAttendanceResponse.fromJson(response.data);
       }
     } catch (e) {
-      print('Error valide employee attendance today: $e');
+      print('Error add new employee attendance: $e');
     }
     return result;
   }

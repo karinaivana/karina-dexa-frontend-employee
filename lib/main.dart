@@ -1,22 +1,11 @@
 import 'package:employee_app/page/edit_profile.dart';
 import 'package:employee_app/page/profile.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'page/home_page.dart';
 import 'page/login.dart';
 import './constant/route_name.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: FirebaseOptions(
-        apiKey: "AIzaSyCQfihUk4Fyngu9-DB3O17NloBM8vpIIVE",
-        authDomain: "karina-dexa.firebaseapp.com",
-        projectId: "karina-dexa",
-        storageBucket: "karina-dexa.appspot.com",
-        messagingSenderId: "196096721783",
-        appId: "1:196096721783:web:97b0a6115650106899d772"),
-  );
   runApp(const MyApp());
 }
 

@@ -7,7 +7,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 
 import '../api_call/attendance.dart';
 
-import '../components/home_page/employee_attendance_list_table.dart';
+import '../components/home_page/table_attendance_employee.dart';
 
 import '../components/navbar.dart';
 import '../data/attendance_list.dart';
@@ -96,7 +96,7 @@ class _HomePageState extends State<HomePage> {
       AutoSizeText(
         "Hai ${_employee?.name}",
         maxLines: 1,
-        style: TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
+        style: const TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
       ),
       const Padding(padding: EdgeInsets.only(top: 10)),
       const AutoSizeText(
@@ -170,7 +170,7 @@ class _HomePageState extends State<HomePage> {
   Widget attendanceButton() {
     return Container(
         width: double.infinity,
-        padding: EdgeInsets.only(top: 20, right: 20, left: 20),
+        padding: const EdgeInsets.only(top: 20, right: 20, left: 20),
         child: ElevatedButton(
           style: ButtonStyle(
             backgroundColor: MaterialStateProperty.all(const Color(0xff9f2a28)),
@@ -228,7 +228,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Navbar(),
+      drawer: const Navbar(),
       appBar: AppBar(
         title: const AutoSizeText("Aplikasi Absensi Karyawan"),
       ),
@@ -284,7 +284,7 @@ class _HomePageState extends State<HomePage> {
                         if (_attendanceList != null)
                           SizedBox(
                               width: MediaQuery.of(context).size.width,
-                              child: EmployeeAttendanceListTable(
+                              child: TableAttendanceEmployee(
                                   emplooyeeAttandanceList: _attendanceList)),
                       ]),
                     )
