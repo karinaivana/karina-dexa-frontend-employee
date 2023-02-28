@@ -59,20 +59,22 @@ class _EditProfileState extends State<EditProfile> {
         backgroundColor: Colors.white,
         body: _isloading
             ? const Center(child: CircularProgressIndicator())
-            : Container(
-                margin: const EdgeInsets.only(
-                    top: 10, right: 20, left: 20, bottom: 10),
-                child: Column(children: [
-                  Container(
-                    padding: const EdgeInsets.only(top: 30, bottom: 20),
-                    child: const Text(
-                      "Edit Profil",
-                      style:
-                          TextStyle(fontSize: 40, fontWeight: FontWeight.w700),
+            : SingleChildScrollView(
+                child: Container(
+                  margin: const EdgeInsets.only(
+                      top: 10, right: 20, left: 20, bottom: 10),
+                  child: Column(children: [
+                    Container(
+                      padding: const EdgeInsets.only(top: 30, bottom: 20),
+                      child: const Text(
+                        "Edit Profil",
+                        style: TextStyle(
+                            fontSize: 40, fontWeight: FontWeight.w700),
+                      ),
                     ),
-                  ),
-                  EditEmployeeDataForm(employee: _employee)
-                ]),
+                    EditEmployeeDataForm(employee: _employee)
+                  ]),
+                ),
               ));
   }
 }

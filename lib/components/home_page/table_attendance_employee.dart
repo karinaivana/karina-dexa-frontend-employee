@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../../data/attendance_list.dart';
@@ -57,13 +56,14 @@ class TableAttendanceEmployee extends StatelessWidget {
         showBottomBorder: true,
         dividerThickness: 2,
         border: TableBorder.symmetric(
-            outside: BorderSide(color: Colors.black, width: 4),
-            inside: BorderSide(color: Colors.black, width: 2)),
+            outside: const BorderSide(color: Colors.black, width: 4),
+            inside: const BorderSide(color: Colors.black, width: 2)),
         headingRowColor: MaterialStateProperty.resolveWith<Color>(
             (Set<MaterialState> states) {
-          return Color.fromARGB(255, 214, 211, 211);
+          return const Color.fromARGB(255, 214, 211, 211);
         }),
-        headingTextStyle: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+        headingTextStyle:
+            const TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
       );
     }
   }

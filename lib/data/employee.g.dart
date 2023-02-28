@@ -18,7 +18,7 @@ Employee _$EmployeeFromJson(Map<String, dynamic> json) => Employee(
       json['name'] as String,
       json['email'] as String,
       json['password'] as String,
-      json['role'] as String,
+      Role.fromJson(json['roleDTO'] as Map<String, dynamic>),
       json['phoneNumber'] as String,
       json['photoLink'] as String?,
     );
@@ -31,9 +31,29 @@ Map<String, dynamic> _$EmployeeToJson(Employee instance) => <String, dynamic>{
       'name': instance.name,
       'email': instance.email,
       'password': instance.password,
-      'role': instance.role,
+      'roleDTO': instance.role,
       'phoneNumber': instance.phoneNumber,
       'photoLink': instance.photoLink,
+    };
+
+Role _$RoleFromJson(Map<String, dynamic> json) => Role(
+      json['id'] as String,
+      DateTime.parse(json['createdAt'] as String),
+      json['updatedAt'] == null
+          ? null
+          : DateTime.parse(json['updatedAt'] as String),
+      json['deletedAt'] == null
+          ? null
+          : DateTime.parse(json['deletedAt'] as String),
+      json['description'] as String,
+    );
+
+Map<String, dynamic> _$RoleToJson(Role instance) => <String, dynamic>{
+      'id': instance.id,
+      'createdAt': instance.createdAt.toIso8601String(),
+      'updatedAt': instance.updatedAt?.toIso8601String(),
+      'deletedAt': instance.deletedAt?.toIso8601String(),
+      'description': instance.description,
     };
 
 LoginResponse _$LoginResponseFromJson(Map<String, dynamic> json) =>
